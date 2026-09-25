@@ -1,0 +1,4 @@
+/* Estilos específicos do PettFieldMoney */
+.pett-input-money {
+    text-align: right; /* Alinha os valores numéricos à direita */
+}

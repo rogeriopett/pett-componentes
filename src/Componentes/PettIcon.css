@@ -1,0 +1,19 @@
+.pett-icon {
+    flex-shrink: 0;
+    user-select: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Animação suave para ícones (ex: de carregamento ou destaque) */
+.ico-animado {
+    animation: pettIconSpin 1.2s linear infinite;
+}
+
+@keyframes pettIconSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

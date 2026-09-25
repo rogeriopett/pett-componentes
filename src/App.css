@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--pett-page-bg, #ffffff);
+    transition: background-color 0.2s ease;
+    font-family: Arial;
+}
+
+.demo-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    color: var(--pett-color-text, #212529);
+}
+
+.demo-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.demo-header h2 {
+    margin: 0;
+}
+
+.demo-theme-switcher {
+    width: 220px;
+}
+
+/* Grade responsiva: os cards se acomodam sozinhos conforme o espaço
+   disponível (nunca menos que 280px de largura cada). */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
+/* Cards que fazem mais sentido ocupando a largura toda (o grid de dados,
+   por exemplo, precisa de espaço pras colunas). */
+.demo-card-wide {
+    grid-column: 1 / -1;
+}
+
+.demo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid var(--pett-color-border, #ccc);
+    border-radius: var(--pett-radius, 6px);
+    background-color: var(--pett-color-bg, #fff);
+    box-sizing: border-box;
+}
+
+.demo-card h3 {
+    margin: 0 0 4px 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--pett-color-label, #6c757d);
+}
+
+.demo-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.demo-json {
+    margin-top: 28px;
+    border: 1px solid var(--pett-color-border, #ccc);
+    border-radius: var(--pett-radius, 6px);
+    background-color: var(--pett-color-bg, #fff);
+    overflow: hidden;
+}
+
+.demo-json summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pett-color-text-muted, #495057);
+    background-color: var(--pett-field-btn-bg, #f4f5f7);
+    user-select: none;
+}
+
+.demo-json pre {
+    margin: 0;
+    padding: 14px;
+    background-color: var(--pett-color-bg-disabled, #f4f4f4);
+    color: var(--pett-color-text, #212529);
+    font-size: 0.8rem;
+    overflow: auto;
+}

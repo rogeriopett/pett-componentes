@@ -1,0 +1,103 @@
+.pett-loc-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    position: relative;
+}
+
+/* Wrapper do Input estilo PettFieldText */
+.pett-loc-input-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input nativo com padding de topo reservado para a label */
+.pett-loc-input {
+    width: 100%;
+    height: 38px;
+    padding: 16px 8px 3px 8px;
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 0.90rem;
+    color: var(--pett-color-text, #212529);
+    border: 1px solid var(--pett-color-border, #ccc);
+    border-top-left-radius: var(--pett-radius, 6px);
+    border-bottom-left-radius: var(--pett-radius, 6px);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+    background-color: var(--pett-color-bg, #fff);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+/* Estado desabilitado e leitura */
+.pett-loc-input:disabled {
+    background-color: var(--pett-color-bg-disabled, #f4f4f4);
+    color: var(--pett-color-text-disabled, #888);
+    cursor: not-allowed;
+}
+
+.pett-loc-input[readonly] {
+    background-color: var(--pett-btn-light-hover, #f8f9fa);
+}
+
+/* Label sempre visível no topo, idêntica ao PettFieldText */
+.pett-loc-input-wrapper label {
+    position: absolute;
+    pointer-events: none;
+    left: 8px;
+    top: 4px;
+    max-width: calc(100% - 16px);
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 0.68rem;
+    color: var(--pett-color-label, #6c757d);
+    background-color: transparent;
+    padding-bottom: 3px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 2;
+}
+
+/* Botão quadrado acoplado à direita (38px x 38px) */
+.pett-loc-group .pett-loc-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--pett-field-btn-bg, #fff);
+    border: 1px solid var(--pett-color-border, #ccc) !important;
+    border-left: none !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: var(--pett-radius, 6px) !important;
+    border-bottom-right-radius: var(--pett-radius, 6px) !important;
+    box-sizing: border-box;
+    outline: none !important;
+    box-shadow: none !important;
+    /* transition: border-color 0.2s ease; */
+}
+
+/* --- SINCRONIZAÇÃO DE FOCO NO CONJUNTO COMPLETO --- */
+
+/* Quando QUALQUER elemento interno ganha foco (Input ou Botão) */
+.pett-loc-group:focus-within .pett-loc-input {
+    border-color: var(--pett-color-accent, #2196f3);
+    box-shadow: none;
+    z-index: 1;
+}
+
+.pett-loc-group:focus-within .pett-loc-btn {
+    border-color: var(--pett-color-accent, #2196f3) !important;
+}
+
+/* Muda a cor da label para azul quando o grupo está em foco */
+.pett-loc-group:focus-within label {
+    color: var(--pett-color-accent, #2196f3);
+}

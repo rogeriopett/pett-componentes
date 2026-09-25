@@ -1,0 +1,41 @@
+/* Select Nativo Customizado */
+.pett-select {
+    width: 100%;
+    padding: 16px 24px 3px 8px; /* Aumentado padding-right para o texto não sobrepor a seta */
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 0.90rem;
+    color: var(--pett-color-text, #212529);
+    border: 1px solid var(--pett-color-border, #ccc);
+    border-radius: var(--pett-radius, 6px);
+    outline: none;
+    background-color: var(--pett-color-bg, #fff);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+    
+    /* Seta nativa customizada via SVG com a cor corrigida (%236c757d) */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px;
+}
+
+/* Foco: Borda mantém 1px de espessura */
+.pett-select:focus {
+    border-color: var(--pett-color-accent, #2196f3);
+    box-shadow: none;
+}
+
+.pett-select:disabled {
+    background-color: var(--pett-color-bg-disabled, #f4f4f4);
+    color: var(--pett-color-text-disabled, #888);
+    cursor: not-allowed;
+}
+
+/* Troca de cor do label no foco */
+.pett-select:focus ~ label {
+    color: var(--pett-color-accent, #2196f3);
+}

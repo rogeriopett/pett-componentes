@@ -1,0 +1,69 @@
+.pett-date-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.pett-date-wrapper:focus-within .pett-input-date {
+    border-color: var(--pett-color-accent, #2196f3);
+    box-shadow: none;
+}
+
+.pett-date-wrapper:focus-within .pett-date-icon-btn {
+    border-color: var(--pett-color-accent, #2196f3) !important;
+}
+
+.pett-input-date {
+    width: 100%;
+    height: 38px;
+    padding: 16px 46px 3px 8px;
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 0.90rem;
+    color: var(--pett-color-text, #212529);
+    border: 1px solid var(--pett-color-border, #ccc);
+    border-radius: var(--pett-radius, 6px);
+    outline: none;
+    background-color: var(--pett-color-bg, #fff);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+/* Ancorado no canto esquerdo com altura e largura zeradas e transparência total */
+.pett-hidden-date-picker {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.pett-date-icon-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0 !important;
+    background-color: var(--pett-field-btn-bg, #fff);
+    border-color: var(--pett-color-border, #ccc) !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: var(--pett-radius, 6px) !important;
+    border-bottom-right-radius: var(--pett-radius, 6px) !important;
+    box-sizing: border-box;
+}
+
+.pett-input-date:disabled {
+    background-color: var(--pett-color-bg-disabled, #f4f4f4);
+    color: var(--pett-color-text-disabled, #888);
+    cursor: not-allowed;
+}
+
+.pett-input-date:focus ~ label {
+    color: var(--pett-color-accent, #2196f3);
+}

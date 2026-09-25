@@ -1,0 +1,31 @@
+/* Input de Máscara Nativo Customizado */
+.pett-input-mask {
+  width: 100%;
+  padding: 16px 8px 3px 8px;
+  font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+  font-size: 0.90rem;
+  color: var(--pett-color-text, #212529);
+  border: 1px solid var(--pett-color-border, #ccc);
+  border-radius: var(--pett-radius, 6px);
+  outline: none;
+  background-color: var(--pett-color-bg, #fff);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+/* Foco: Borda mantém 1px de espessura */
+.pett-input-mask:focus {
+  border-color: var(--pett-color-accent, #2196f3);
+  box-shadow: none;
+}
+
+.pett-input-mask:disabled {
+  background-color: var(--pett-color-bg-disabled, #f4f4f4);
+  color: var(--pett-color-text-disabled, #888);
+  cursor: not-allowed;
+}
+
+/* Troca de cor do label no foco */
+.pett-input-mask:focus ~ label {
+  color: var(--pett-color-accent, #2196f3);
+}

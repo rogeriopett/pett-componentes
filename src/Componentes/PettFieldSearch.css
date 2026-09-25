@@ -1,0 +1,113 @@
+.pett-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Input sem bordas e com fundo sutil arredondado */
+.pett-search-input {
+    width: 100%;
+    height: 36px;
+    padding: 0 32px 0 34px; /* Espaço para os ícones da esquerda e direita */
+    border: none;
+    border-radius: 20px; /* Bordas arredondadas em formato de pílula */
+    background-color: rgba(var(--pett-contrast-rgb, 0, 0, 0), 0.05); /* Fundo sutilmente transparente */
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 13px;
+    color: var(--pett-color-text, #212529);
+    outline: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Hover e Foco */
+.pett-search-input:hover:not(:disabled) {
+    background-color: rgba(var(--pett-contrast-rgb, 0, 0, 0), 0.08);
+}
+
+/* Alterado: Cor de fundo suave (azul pastel/gelo) e borda de foco */
+.pett-search-input:focus {
+    background-color: rgba(var(--pett-accent-rgb, 33, 150, 243), 0.08); 
+    /* box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.35); */
+}
+
+/* Ícone da Lupa (Esquerda) */
+.pett-search-icon-left {
+    position: absolute;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0.55;
+}
+
+/* Botão Limpar (Direita) com Ícone "X" integrado */
+.pett-search-clear-btn {
+    position: absolute;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(var(--pett-contrast-rgb, 0, 0, 0), 0.2);
+    color: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    padding: 0;
+}
+
+/* Desenho das hastes do "X" */
+.pett-search-clear-btn::before,
+.pett-search-clear-btn::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    /* Usa a cor de fundo do campo (oposta ao tom do círculo translúcido
+       acima) pra manter contraste automaticamente em qualquer tema */
+    background-color: var(--pett-color-bg, #ffffff);
+    border-radius: 1px;
+}
+
+.pett-search-clear-btn::before {
+    transform: rotate(45deg);
+}
+
+.pett-search-clear-btn::after {
+    transform: rotate(-45deg);
+}
+
+.pett-search-clear-btn:hover {
+    background-color: rgba(var(--pett-contrast-rgb, 0, 0, 0), 0.4);
+    transform: scale(1.05);
+}
+
+/* Ajustes de Label quando usado com Float Label */
+.pett-search-wrapper label {
+    position: absolute;
+    left: 34px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 13px;
+    color: var(--pett-color-label, #6c757d);
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.pett-search-input:focus ~ label,
+.pett-search-input:not(:placeholder-shown) ~ label {
+    display: none; /* Oculta a label simplificando a barra de busca */
+}
+
+/* Estado Desabilitado */
+.pett-search-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}

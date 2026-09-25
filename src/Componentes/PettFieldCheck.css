@@ -1,0 +1,90 @@
+.pett-check-container {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+}
+
+.pett-check-wrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+/* Oculta o checkbox nativo sem perder a acessibilidade de foco do teclado */
+.pett-check-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+/* Caixa Customizada de Checkbox */
+.pett-check-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--pett-color-border, #ccc);
+    border-radius: 4px;
+    background-color: var(--pett-color-bg, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* Ícone da Seleção */
+.pett-check-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--pett-btn-text-solid, #fff);
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    transition: stroke-dashoffset 0.2s ease-in-out;
+}
+
+/* Estado Marcado (Checked) */
+.pett-check-input:checked + .pett-check-box {
+    background-color: var(--pett-color-accent, #2196f3);
+    border-color: var(--pett-color-accent, #2196f3);
+}
+
+.pett-check-input:checked + .pett-check-box .pett-check-icon {
+    stroke-dashoffset: 0;
+}
+
+/* Foco e Hover */
+.pett-check-wrapper:hover .pett-check-input:not(:disabled) + .pett-check-box {
+    border-color: var(--pett-color-accent, #2196f3);
+}
+
+.pett-check-input:focus-visible + .pett-check-box {
+    border-color: var(--pett-color-accent, #2196f3);
+    box-shadow: 0 0 0 2px rgba(var(--pett-accent-rgb, 33, 150, 243), 0.25);
+}
+
+/* Texto do Rótulo */
+.pett-check-label {
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 0.85rem;
+    color: var(--pett-color-text, #212529);
+    margin-left: 8px;
+}
+
+/* Estado Desabilitado e Somente Leitura */
+.pett-check-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.pett-check-disabled .pett-check-box {
+    background-color: var(--pett-color-bg-disabled, #f4f4f4);
+    border-color: var(--pett-color-border, #ccc);
+}
+
+.pett-check-readonly {
+    cursor: default;
+}

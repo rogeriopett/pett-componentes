@@ -1,0 +1,160 @@
+/* Classe Base */
+.btn-pett {
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 12px;
+    line-height: 1; /* Força o alinhamento de texto sem espaço extra vertical */
+    border-radius: var(--pett-radius-btn, 5px);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+/* Otimização do Texto Interno */
+.pett-btn-text,
+.pett-btn-text-responsive {
+    margin: 0 2px;
+    line-height: 1;
+    display: inline-block;
+}
+
+@media (max-width: 991px) {
+    .pett-btn-text-responsive {
+        display: none;
+    }
+}
+
+/* Tamanhos Específicos */
+.btn-pett-sm {
+    padding: 4px 6px;
+    font-size: 11px;
+    min-height: 22px;
+    height: auto; /* Restaura altura automática para tamanhos explícitos */
+}
+
+.btn-pett-md {
+    padding: 4px 8px;
+    font-size: 12px;
+    min-height: 28px;
+    height: auto; /* Restaura altura automática para tamanhos explícitos */
+}
+
+.btn-pett-lg {
+    padding: 6px 14px;
+    font-size: 18px;
+    /* border-radius: 10px; */
+    min-height: 36px;
+    height: auto; /* Restaura altura automática para tamanhos explícitos */
+}
+
+/* Variantes */
+.btn-pett-dark {
+    border-color: var(--pett-btn-dark-border, #343a40);
+    color: var(--pett-btn-dark-text, #212529);
+}
+.btn-pett-dark:hover:not(:disabled) {
+    background-color: var(--pett-btn-dark-hover, #e2e6ea);
+}
+.btn-pett-dark:active:not(:disabled) {
+    background-color: var(--pett-btn-dark-active, #dae0e5);
+}
+
+.btn-pett-light {
+    border-color: var(--pett-btn-light-border, #ccc);
+    color: var(--pett-btn-light-text, #495057);
+}
+.btn-pett-light:hover:not(:disabled) {
+    background-color: var(--pett-btn-light-hover, #f8f9fa);
+}
+.btn-pett-light:active:not(:disabled) {
+    background-color: var(--pett-btn-light-active, #e9ecef);
+}
+
+.btn-pett-red {
+    background-color: var(--pett-btn-red, #cc3929);
+    color: var(--pett-btn-text-solid, #ffffff);
+}
+.btn-pett-red:hover:not(:disabled) {
+    background-color: var(--pett-btn-red-hover, #ad3123);
+}
+.btn-pett-red:active:not(:disabled) {
+    background-color: var(--pett-btn-red-active, #8f281c);
+}
+
+.btn-pett-green {
+    background-color: var(--pett-btn-green, #007a57);
+    color: var(--pett-btn-text-solid, #ffffff);
+}
+.btn-pett-green:hover:not(:disabled) {
+    background-color: var(--pett-btn-green-hover, #006448);
+}
+.btn-pett-green:active:not(:disabled) {
+    background-color: var(--pett-btn-green-active, #004f39);
+}
+
+.btn-pett-blue {
+    background-color: var(--pett-btn-blue, #3652cf);
+    color: var(--pett-btn-text-solid, #ffffff);
+}
+.btn-pett-blue:hover:not(:disabled) {
+    background-color: var(--pett-btn-blue-hover, #2c45b9);
+}
+.btn-pett-blue:active:not(:disabled) {
+    background-color: var(--pett-btn-blue-active, #233796);
+}
+
+.btn-pett-orange {
+    background-color: var(--pett-btn-orange, #cf6e36);
+    color: var(--pett-btn-text-solid, #ffffff);
+}
+.btn-pett-orange:hover:not(:disabled) {
+    background-color: var(--pett-btn-orange-hover, #b76130);
+}
+.btn-pett-orange:active:not(:disabled) {
+    background-color: var(--pett-btn-orange-active, #995128);
+}
+
+.btn-pett-yellow {
+    background-color: var(--pett-btn-yellow, #e7b00c);
+    color: var(--pett-btn-text-solid, #ffffff);
+}
+.btn-pett-yellow:hover:not(:disabled) {
+    background-color: var(--pett-btn-yellow-hover, #c69503);
+}
+.btn-pett-yellow:active:not(:disabled) {
+    background-color: var(--pett-btn-yellow-active, #a37b02);
+}
+
+.btn-pett-purple {
+    background-color: var(--pett-btn-purple, #972bdb);
+    color: var(--pett-btn-text-solid, #ffffff);
+}
+.btn-pett-purple:hover:not(:disabled) {
+    background-color: var(--pett-btn-purple-hover, #8525c1);
+}
+.btn-pett-purple:active:not(:disabled) {
+    background-color: var(--pett-btn-purple-active, #6d1e9e);
+}
+
+/* Estado Desabilitado */
+.btn-pett:disabled,
+.btn-pett[disabled] {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* .btn-pett .pett-icon {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+} */

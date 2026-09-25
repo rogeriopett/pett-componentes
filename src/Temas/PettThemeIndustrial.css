@@ -1,0 +1,79 @@
+/*
+ * PettThemeIndustrial — tema claro, tons de aço/grafite com acento âmbar.
+ * Ver PettThemeLight.css para a explicação de como o mecanismo funciona.
+ */
+
+[data-pett-theme="industrial"] {
+    --pett-page-bg: #e8e8e4;
+    --pett-field-btn-bg: #f0f0e9;
+    
+    --pett-font-family: Arial, Helvetica, sans-serif;
+    --pett-radius: 3px;
+    --pett-radius-btn: 3px;
+
+    --pett-color-bg: #f2f2f0;
+    --pett-color-bg-disabled: #e4e4e1;
+    --pett-color-border: #9a9a94;
+    --pett-color-text: #2b2b28;
+    --pett-color-text-disabled: #8a8a84;
+    --pett-color-text-muted: #55554f;
+    --pett-color-label: #6e6e66;
+    --pett-color-track: #cfcfc8;
+
+    --pett-contrast-rgb: 0, 0, 0;
+
+    --pett-accent-rgb: 255, 152, 0;
+    --pett-color-accent: rgb(var(--pett-accent-rgb));
+    --pett-color-accent-hover: #f57c00;
+
+    --pett-btn-dark-border: #4a4a45;
+    --pett-btn-dark-text: #2b2b28;
+    --pett-btn-dark-hover: #e0e0da;
+    --pett-btn-dark-active: #d2d2ca;
+    --pett-btn-light-border: #9a9a94;
+    --pett-btn-light-text: #55554f;
+    --pett-btn-light-hover: #e8e8e2;
+    --pett-btn-light-active: #dcdcd4;
+    --pett-btn-text-solid: #ffffff;
+
+    --pett-btn-red: #b8402f;
+    --pett-btn-red-hover: #9c3527;
+    --pett-btn-red-active: #822b20;
+    --pett-btn-green: #1f6b4d;
+    --pett-btn-green-hover: #195943;
+    --pett-btn-green-active: #144736;
+    --pett-btn-blue: #33538f;
+    --pett-btn-blue-hover: #2a4577;
+    --pett-btn-blue-active: #22375f;
+    --pett-btn-orange: #b8622e;
+    --pett-btn-orange-hover: #9c5227;
+    --pett-btn-orange-active: #814320;
+    --pett-btn-yellow: #c99a17;
+    --pett-btn-yellow-hover: #ab8412;
+    --pett-btn-yellow-active: #8d6d0f;
+    --pett-btn-purple: #7a3fa0;
+    --pett-btn-purple-hover: #663488;
+    --pett-btn-purple-active: #532a6f;
+
+    --pett-switch-track-off: #b6b6ae;
+    --pett-switch-track-off-hover: #a0a098;
+    --pett-switch-handle: #f2f2f0;
+
+    /* Picker mantém o mesmo chrome escuro fixo de todos os temas */
+    --pett-picker-bg: #2b2b2b;
+    --pett-picker-input-bg: #1e1e1e;
+    --pett-picker-border: #444444;
+    --pett-picker-text: #ffffff;
+    --pett-picker-muted: #aaaaaa;
+
+    /* PettGrid — paleta própria, independente dos campos (dá pra
+       diferenciar o visual do grid do resto do formulário se precisar). */
+    --pett-grid-border: #9a9a94;
+    --pett-grid-bg: #f2f2f0;
+    --pett-grid-text: #2b2b28;
+    --pett-grid-label: #6e6e66;
+    --pett-grid-header-bg: #f0f0e9;
+    --pett-grid-accent-rgb: 255, 152, 0;
+    --pett-grid-accent: rgb(var(--pett-grid-accent-rgb));
+    --pett-grid-contrast-rgb: 0, 0, 0;
+}

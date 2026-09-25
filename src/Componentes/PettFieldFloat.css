@@ -1,0 +1,4 @@
+/* Alinha os números decimais à direita no estilo dos campos numéricos */
+.pett-input-float {
+    text-align: right;
+}

@@ -1,0 +1,135 @@
+.pett-grid-wrapper {
+    /* Tamanho de fonte do grid, isolado num token próprio (não é um
+       token de tema global) — mude aqui, ou sobrescreva de fora
+       (`.pett-grid-wrapper { --pett-grid-font-size: ... }`), pra afetar
+       cabeçalho e células de uma vez, já que herdam por cascata. */
+    --pett-grid-font-size: 0.75rem;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid var(--pett-grid-border, var(--pett-color-border, #ccc));
+    border-left: none;
+    border-right: none;
+    background-color: var(--pett-grid-bg, var(--pett-color-bg, #fff));
+    box-sizing: border-box;
+}
+
+/* Linha guia exibida durante o arraste de redimensionamento — a largura
+   da coluna só é aplicada de verdade quando o usuário solta o clique. */
+.pett-grid-resize-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--pett-grid-accent, var(--pett-color-accent, #2196f3));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pett-grid-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: var(--pett-grid-font-size, 0.75rem);
+    color: var(--pett-grid-text, var(--pett-color-text, #212529));
+}
+
+.pett-grid-th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--pett-grid-header-bg, var(--pett-field-btn-bg, #f4f5f7));
+    text-align: left;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-bottom: none;
+    box-shadow: inset 0 -1px 0 0 var(--pett-grid-border, var(--pett-color-border, #ccc));
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.pett-grid-th-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.pett-grid-th-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pett-grid-th-sortable {
+    cursor: pointer;
+}
+
+.pett-grid-sort-icon {
+    flex-shrink: 0;
+}
+
+.pett-grid-resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: col-resize;
+    transition: background-color 0.15s ease;
+}
+
+.pett-grid-resize-handle:hover,
+.pett-grid-resize-handle:active {
+    background-color: var(--pett-grid-accent, var(--pett-color-accent, #2196f3));
+}
+
+/* Destaque no hover: só a célula do cabeçalho, não a coluna inteira.
+   Como o cabeçalho já tem fundo opaco (--pett-grid-header-bg), soma-se uma
+   camada de tinta por cima em vez de trocar a cor (senão ficaria transparente). */
+.pett-grid-th:hover {
+    background-image: linear-gradient(
+        rgba(var(--pett-grid-contrast-rgb, 0, 0, 0), 0.06),
+        rgba(var(--pett-grid-contrast-rgb, 0, 0, 0), 0.06)
+    );
+}
+
+.pett-grid-td {
+    padding: 6px 10px;
+    border-bottom: var(--pett-grid-row-border-width, 1px) solid var(--pett-grid-border, var(--pett-color-border, #ccc));
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+.pett-grid-row {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.pett-grid-row-striped {
+    background-color: rgba(var(--pett-grid-contrast-rgb, 0, 0, 0), 0.03);
+}
+
+.pett-grid-row:not(.pett-grid-row-selected):hover {
+    background-color: rgba(var(--pett-grid-contrast-rgb, 0, 0, 0), 0.06);
+}
+
+.pett-grid-row-selected {
+    background-color: rgba(var(--pett-grid-accent-rgb, 33, 150, 243), 0.14);
+}
+
+.pett-grid-empty {
+    padding: 20px;
+    text-align: center;
+    color: var(--pett-grid-label, var(--pett-color-label, #6c757d));
+    border: 1px dashed var(--pett-grid-border, var(--pett-color-border, #ccc));
+    border-radius: var(--pett-radius, 6px);
+    font-family: var(--pett-font-family, Arial, Helvetica, sans-serif);
+    font-size: 0.85rem;
+    box-sizing: border-box;
+}

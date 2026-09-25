@@ -12,12 +12,17 @@ export default defineConfig({
             fileName: (format) => `pett-componentes.${format}.js`,
         },
         rollupOptions: {
-            // Garante que as libs de React não sejam empacotadas no bundle final
-            external: ['react', 'react-dom'],
+            // Garante que as libs de React não sejam empacotadas no bundle final.
+            // jsx-runtime também precisa estar aqui: é pra onde o JSX compila
+            // (runtime automático do @vitejs/plugin-react) — sem isso, o bundler
+            // embute um shim de interop CJS que quebra em ambiente ESM puro.
+            external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
             output: {
                 globals: {
                     react: 'React',
                     'react-dom': 'ReactDOM',
+                    'react/jsx-runtime': 'jsxRuntime',
+                    'react/jsx-dev-runtime': 'jsxDevRuntime',
                 },
             },
         },

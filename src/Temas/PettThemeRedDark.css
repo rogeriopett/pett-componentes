@@ -1,0 +1,91 @@
+/*
+ * PettThemeRedDark — variante do tema escuro com acento vermelho.
+ * Ver PettThemeLight.css para a explicação de como o mecanismo funciona.
+ *
+ * As 3 cores-base pedidas:
+ *   --pett-color-bg      #282828  (fundo dos campos)
+ *   --pett-color-border  #414141  (borda dos campos)
+ *   --pett-accent-rgb    #cc3929  (borda em foco / cor de acento)
+ *
+ * O tema Dark original usa cinzas com o canal azul (B) sempre um
+ * pouco mais alto que o vermelho (R) — um viés "frio". Aqui, em todo
+ * tom que precisei derivar (os que não vieram prontos), invertido:
+ * o canal vermelho (R) fica mais alto, um viés "quente" consistente
+ * com o acento.
+ */
+
+[data-pett-theme="reddark"] {
+    --pett-page-bg: #201e1e;
+    --pett-field-btn-bg: #221f1f;
+
+    --pett-font-family: Arial, Helvetica, sans-serif;
+    --pett-radius: 6px;
+    --pett-radius-btn: 5px;
+
+    --pett-color-bg: #282828;
+    --pett-color-bg-disabled: #1e1c1c;
+    --pett-color-border: #414141;
+    --pett-color-text: #f1efed;
+    --pett-color-text-disabled: #7a7674;
+    --pett-color-text-muted: #bcb8b5;
+    --pett-color-label: #9d9895;
+    --pett-color-track: #4a4444;
+
+    /* No escuro, os overlays sutis clareiam em vez de escurecer */
+    --pett-contrast-rgb: 255, 255, 255;
+
+    --pett-accent-rgb: 225, 80, 60;              /* era 204, 57, 41 (#cc3929) */
+    --pett-color-accent: rgb(var(--pett-accent-rgb));
+    --pett-color-accent-hover: #f2694f;           /* era #e1503c — precisou subir também, senão ficaria mais escuro que o próprio acento */
+
+    --pett-btn-dark-border: #d6d0cd;
+    --pett-btn-dark-text: #f1efed;
+    --pett-btn-dark-hover: #3d3838;
+    --pett-btn-dark-active: #494242;
+    --pett-btn-light-border: #595252;
+    --pett-btn-light-text: #d4cfcd;
+    --pett-btn-light-hover: #3d3838;
+    --pett-btn-light-active: #494242;
+    --pett-btn-text-solid: #ffffff;
+
+    --pett-btn-red: #cc3929;
+    --pett-btn-red-hover: #e1503c;
+    --pett-btn-red-active: #f26b52;
+    --pett-btn-green: #12996e;
+    --pett-btn-green-hover: #1cb583;
+    --pett-btn-green-active: #33cc99;
+    --pett-btn-blue: #5470e0;
+    --pett-btn-blue-hover: #6f89ec;
+    --pett-btn-blue-active: #8ba0f2;
+    --pett-btn-orange: #e2854a;
+    --pett-btn-orange-hover: #ec9c68;
+    --pett-btn-orange-active: #f5b385;
+    --pett-btn-yellow: #f2c22e;
+    --pett-btn-yellow-hover: #f5cf55;
+    --pett-btn-yellow-active: #f8dc7d;
+    --pett-btn-purple: #a94eea;
+    --pett-btn-purple-hover: #b96ef0;
+    --pett-btn-purple-active: #c98ef5;
+
+    --pett-switch-track-off: #595252;
+    --pett-switch-track-off-hover: #6e6666;
+    --pett-switch-handle: #f1efed;
+
+    /* Picker mantém o mesmo chrome escuro fixo de todos os temas */
+    --pett-picker-bg: #2b2b2b;
+    --pett-picker-input-bg: #1e1e1e;
+    --pett-picker-border: #444444;
+    --pett-picker-text: #ffffff;
+    --pett-picker-muted: #aaaaaa;
+
+    /* PettGrid — paleta própria, independente dos campos (dá pra
+       diferenciar o visual do grid do resto do formulário se precisar). */
+    --pett-grid-border: #414141;
+    --pett-grid-bg: #282828;
+    --pett-grid-text: #f1efed;
+    --pett-grid-label: #9d9895;
+    --pett-grid-header-bg: #221f1f;
+    --pett-grid-accent-rgb: 204, 57, 41;
+    --pett-grid-accent: rgb(var(--pett-grid-accent-rgb));
+    --pett-grid-contrast-rgb: 255, 255, 255;
+}

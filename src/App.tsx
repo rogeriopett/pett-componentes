@@ -26,6 +26,7 @@ import './App.css';
 import './Temas/PettThemeLight.css';
 import './Temas/PettThemeDark.css';
 import './Temas/PettThemeIndustrial.css';
+import './Temas/PettThemeRedDark.css';
 
 function App() {
     const [formData, setFormData] = useState({ nome: '', codigo: '', status: '', categoria: '', cpf: '', cnpj: '',
@@ -64,6 +65,7 @@ function App() {
         { label: 'CLARO (LIGHT)', valor: 'light' },
         { label: 'ESCURO (DARK)', valor: 'dark' },
         { label: 'INDUSTRIAL', valor: 'industrial' },
+        { label: 'RED DARK', valor: 'reddark' },
     ];
 
     // Aplica o tema no <html> (ancestral de tudo, inclusive do <body>)

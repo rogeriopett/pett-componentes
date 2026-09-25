@@ -14,7 +14,8 @@
         "./style.css": "./dist/pett-componentes.css",
         "./temas/light.css": "./dist/temas/PettThemeLight.css",
         "./temas/dark.css": "./dist/temas/PettThemeDark.css",
-        "./temas/industrial.css": "./dist/temas/PettThemeIndustrial.css"
+        "./temas/industrial.css": "./dist/temas/PettThemeIndustrial.css",
+        "./temas/reddark.css": "./dist/temas/PettThemeRedDark.css"
     },
     "scripts": {
         "dev": "vite",

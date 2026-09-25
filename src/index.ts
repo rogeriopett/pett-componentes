@@ -52,8 +52,14 @@ export type { PettGridProps } from './Componentes/PettGrid';
 export { PettIcon } from './Componentes/PettIcon';
 export type { PettIconProps } from './Componentes/PettIcon';
 
-export { PettModal } from './Componentes/PettModal';
-export type { PettModalProps } from './Componentes/PettModal';
+export { PettModal, PettModalFooter } from './Componentes/PettModal';
+export type { PettModalProps, PettModalSize, PettModalPosition } from './Componentes/PettModal';
 
 export { PettSwitch } from './Componentes/PettSwitch';
 export type { PettSwitchProps } from './Componentes/PettSwitch';
+
+export { PettTab } from './Componentes/PettTab';
+export type { PettTabProps } from './Componentes/PettTab';
+
+export { PettTabPanel } from './Componentes/PettTabPanel';
+export type { PettTabPanelProps } from './Componentes/PettTabPanel';

@@ -1,0 +1,80 @@
+/*
+ * PettThemeDark — tema escuro.
+ * Ver PettThemeLight.css para a explicação de como o mecanismo funciona.
+ */
+
+[data-pett-theme="dark"] {
+    --pett-page-bg: #201f1f;
+    --pett-field-btn-bg: #222222;
+    
+    --pett-font-family: Arial, Helvetica, sans-serif;
+    --pett-radius: 6px;
+    --pett-radius-btn: 5px;
+
+    --pett-color-bg: #2a2a2e;
+    --pett-color-bg-disabled: #201f22;
+    --pett-color-border: #4a4a50;
+    --pett-color-text: #f1f1f1;
+    --pett-color-text-disabled: #77777c;
+    --pett-color-text-muted: #b8b8bd;
+    --pett-color-label: #9a9aa0;
+    --pett-color-track: #45454b;
+
+    /* No escuro, os overlays sutis clareiam em vez de escurecer */
+    --pett-contrast-rgb: 255, 255, 255;
+
+    --pett-accent-rgb: 66, 165, 245;
+    --pett-color-accent: rgb(var(--pett-accent-rgb));
+    --pett-color-accent-hover: #63b8ff;
+
+    --pett-btn-dark-border: #cfd4da;
+    --pett-btn-dark-text: #f1f1f1;
+    --pett-btn-dark-hover: #3a3a40;
+    --pett-btn-dark-active: #45454c;
+    --pett-btn-light-border: #55555c;
+    --pett-btn-light-text: #d0d0d5;
+    --pett-btn-light-hover: #3a3a40;
+    --pett-btn-light-active: #45454c;
+    --pett-btn-text-solid: #ffffff;
+
+    --pett-btn-red: #e5493a;
+    --pett-btn-red-hover: #ef6152;
+    --pett-btn-red-active: #f57d70;
+    --pett-btn-green: #12996e;
+    --pett-btn-green-hover: #1cb583;
+    --pett-btn-green-active: #33cc99;
+    --pett-btn-blue: #5470e0;
+    --pett-btn-blue-hover: #6f89ec;
+    --pett-btn-blue-active: #8ba0f2;
+    --pett-btn-orange: #e2854a;
+    --pett-btn-orange-hover: #ec9c68;
+    --pett-btn-orange-active: #f5b385;
+    --pett-btn-yellow: #f2c22e;
+    --pett-btn-yellow-hover: #f5cf55;
+    --pett-btn-yellow-active: #f8dc7d;
+    --pett-btn-purple: #a94eea;
+    --pett-btn-purple-hover: #b96ef0;
+    --pett-btn-purple-active: #c98ef5;
+
+    --pett-switch-track-off: #55555c;
+    --pett-switch-track-off-hover: #6a6a72;
+    --pett-switch-handle: #f1f1f1;
+
+    /* Picker mantém o mesmo chrome escuro fixo de todos os temas */
+    --pett-picker-bg: #2b2b2b;
+    --pett-picker-input-bg: #1e1e1e;
+    --pett-picker-border: #444444;
+    --pett-picker-text: #ffffff;
+    --pett-picker-muted: #aaaaaa;
+
+    /* PettGrid — paleta própria, independente dos campos (dá pra
+       diferenciar o visual do grid do resto do formulário se precisar). */
+    --pett-grid-border: #4a4a50;
+    --pett-grid-bg: #2a2a2e;
+    --pett-grid-text: #f1f1f1;
+    --pett-grid-label: #9a9aa0;
+    --pett-grid-header-bg: #222222;
+    --pett-grid-accent-rgb: 66, 165, 245;
+    --pett-grid-accent: rgb(var(--pett-grid-accent-rgb));
+    --pett-grid-contrast-rgb: 255, 255, 255;
+}

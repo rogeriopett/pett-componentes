@@ -1,0 +1,102 @@
+/*
+ * PettThemeLight — tema padrão (claro).
+ *
+ * Este arquivo funciona também como o "manifesto" de todas as variáveis
+ * de tema que os componentes Pett entendem. Qualquer tema novo (inclusive
+ * um tema customizado feito por quem consome o pacote) só precisa
+ * redeclarar o subconjunto de variáveis que quiser mudar, no mesmo
+ * seletor de atributo: [data-pett-theme="nome-do-tema"].
+ *
+ * Como aplicar: coloque data-pett-theme="light" em qualquer elemento
+ * ancestral dos componentes (ex: <html>, <body> ou um wrapper) —
+ * o valor cascateia por herança de CSS Custom Properties.
+ *
+ * Importante: todo componente já tem um valor de fallback idêntico ao
+ * deste tema embutido no próprio CSS (var(--token, fallback)). Ou seja,
+ * NÃO é obrigatório importar nenhum arquivo de tema — sem tema nenhum
+ * aplicado, o visual já é este (Light) por padrão.
+ */
+
+[data-pett-theme="light"] {
+    --pett-page-bg: #f4f5f7;
+    --pett-field-btn-bg: #e9edf0;
+    
+    /* Tipografia e formas */
+    --pett-font-family: Arial, Helvetica, sans-serif;
+    --pett-radius: 6px;
+    --pett-radius-btn: 5px;
+
+    /* Superfícies e texto base (campos) */
+    --pett-color-bg: #ffffff;
+    --pett-color-bg-disabled: #f4f4f4;
+    --pett-color-border: #cccccc;
+    --pett-color-text: #212529;
+    --pett-color-text-disabled: #888888;
+    --pett-color-text-muted: #495057;
+    --pett-color-label: #6c757d;
+    --pett-color-track: #e0e0e0;
+
+    /* Base pra overlays sutis (funciona em claro OU escuro) */
+    --pett-contrast-rgb: 0, 0, 0;
+
+    /* Acento (foco, seleção, links de interação) */
+    --pett-accent-rgb: 33, 150, 243;
+    --pett-color-accent: rgb(var(--pett-accent-rgb));
+    --pett-color-accent-hover: #0d8aee;
+
+    /* PettButton — variantes neutras */
+    --pett-btn-dark-border: #343a40;
+    --pett-btn-dark-text: #212529;
+    --pett-btn-dark-hover: #e2e6ea;
+    --pett-btn-dark-active: #dae0e5;
+    --pett-btn-light-border: #cccccc;
+    --pett-btn-light-text: #495057;
+    --pett-btn-light-hover: #f8f9fa;
+    --pett-btn-light-active: #e9ecef;
+    --pett-btn-text-solid: #ffffff;
+
+    /* PettButton — variantes sólidas coloridas */
+    --pett-btn-red: #cc3929;
+    --pett-btn-red-hover: #ad3123;
+    --pett-btn-red-active: #8f281c;
+    --pett-btn-green: #007a57;
+    --pett-btn-green-hover: #006448;
+    --pett-btn-green-active: #004f39;
+    --pett-btn-blue: #3652cf;
+    --pett-btn-blue-hover: #2c45b9;
+    --pett-btn-blue-active: #233796;
+    --pett-btn-orange: #cf6e36;
+    --pett-btn-orange-hover: #b76130;
+    --pett-btn-orange-active: #995128;
+    --pett-btn-yellow: #e7b00c;
+    --pett-btn-yellow-hover: #c69503;
+    --pett-btn-yellow-active: #a37b02;
+    --pett-btn-purple: #972bdb;
+    --pett-btn-purple-hover: #8525c1;
+    --pett-btn-purple-active: #6d1e9e;
+
+    /* PettSwitch */
+    --pett-switch-track-off: #ced4da;
+    --pett-switch-track-off-hover: #b1b7bc;
+    --pett-switch-handle: #ffffff;
+
+    /* PettFieldColor / PettColorSwatch — chrome do popover.
+       Fixo e igual em todos os temas de propósito: é uma ferramenta
+       de seleção de cor, não faz sentido ela mudar de cor sozinha. */
+    --pett-picker-bg: #2b2b2b;
+    --pett-picker-input-bg: #1e1e1e;
+    --pett-picker-border: #444444;
+    --pett-picker-text: #ffffff;
+    --pett-picker-muted: #aaaaaa;
+
+    /* PettGrid — paleta própria, independente dos campos (dá pra
+       diferenciar o visual do grid do resto do formulário se precisar). */
+    --pett-grid-border: #cccccc;
+    --pett-grid-bg: #ffffff;
+    --pett-grid-text: #212529;
+    --pett-grid-label: #6c757d;
+    --pett-grid-header-bg: #e9edf0;
+    --pett-grid-accent-rgb: 33, 150, 243;
+    --pett-grid-accent: rgb(var(--pett-grid-accent-rgb));
+    --pett-grid-contrast-rgb: 0, 0, 0;
+}

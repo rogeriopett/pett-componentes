@@ -47,7 +47,7 @@ const parseDigitsToNumber = (rawValue: string): number | null => {
     return parseFloat(cleanDigits) / 100;
 };
 
-export const PettFieldMoney: React.FC<PettFieldMoneyProps> = React.memo((props) => {
+export const PettFieldMoney = React.memo(React.forwardRef<HTMLInputElement, PettFieldMoneyProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -88,6 +88,7 @@ export const PettFieldMoney: React.FC<PettFieldMoneyProps> = React.memo((props) 
                     id={name}
                     name={name}
                     type="text"
+                    ref={ref}
                     inputMode="numeric"
                     value={formattedValue}
                     onChange={handleValueChange}
@@ -103,6 +104,6 @@ export const PettFieldMoney: React.FC<PettFieldMoneyProps> = React.memo((props) 
             </div>
         </div>
     );
-});
+}));
 
 PettFieldMoney.displayName = "PettFieldMoney";

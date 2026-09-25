@@ -19,7 +19,7 @@ export interface PettFieldTextAreaProps {
     value?: string;
 }
 
-export const PettFieldTextArea: React.FC<PettFieldTextAreaProps> = React.memo((props) => {
+export const PettFieldTextArea = React.memo(React.forwardRef<HTMLTextAreaElement, PettFieldTextAreaProps>((props, ref) => {
     const {
         autoResize = true,
         disabled = false,
@@ -75,7 +75,11 @@ export const PettFieldTextArea: React.FC<PettFieldTextAreaProps> = React.memo((p
         <div className={`pett-field-container ${size}`.trim()}>
             <div className="pett-float-label">
                 <textarea
-                    ref={textareaRef}
+                    ref={(el) => {
+                        textareaRef.current = el;
+                        if (typeof ref === "function") ref(el);
+                        else if (ref) ref.current = el;
+                    }}
                     id={name}
                     name={name}
                     value={value ?? ""}
@@ -92,6 +96,6 @@ export const PettFieldTextArea: React.FC<PettFieldTextAreaProps> = React.memo((p
             </div>
         </div>
     );
-});
+}));
 
 PettFieldTextArea.displayName = "PettFieldTextArea";

@@ -44,7 +44,7 @@ const getKeyFilterRegex = (filter?: KeyFilterType): RegExp | null => {
     }
 };
 
-export const PettFieldText: React.FC<PettFieldTextProps> = React.memo((props) => {
+export const PettFieldText = React.memo(React.forwardRef<HTMLInputElement, PettFieldTextProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -104,6 +104,7 @@ export const PettFieldText: React.FC<PettFieldTextProps> = React.memo((props) =>
                     id={name}
                     name={name}
                     type={type}
+                    ref={ref}
                     value={value ?? ''}
                     onChange={handleValueChange}
                     maxLength={length}
@@ -118,6 +119,6 @@ export const PettFieldText: React.FC<PettFieldTextProps> = React.memo((props) =>
             </div>
         </div>
     );
-});
+}));
 
 PettFieldText.displayName = "PettFieldText";

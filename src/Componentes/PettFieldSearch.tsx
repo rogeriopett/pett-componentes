@@ -21,7 +21,7 @@ export interface PettFieldSearchProps {
     value?: string | number;
 }
 
-export const PettFieldSearch: React.FC<PettFieldSearchProps> = React.memo((props) => {
+export const PettFieldSearch = React.memo(React.forwardRef<HTMLInputElement, PettFieldSearchProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -83,7 +83,11 @@ export const PettFieldSearch: React.FC<PettFieldSearchProps> = React.memo((props
                 </span>
 
                 <input
-                    ref={inputRef}
+                    ref={(el) => {
+                        inputRef.current = el;
+                        if (typeof ref === "function") ref(el);
+                        else if (ref) ref.current = el;
+                    }}
                     id={name}
                     name={name}
                     type="text"
@@ -115,6 +119,6 @@ export const PettFieldSearch: React.FC<PettFieldSearchProps> = React.memo((props
             </div>
         </div>
     );
-});
+}));
 
 PettFieldSearch.displayName = "PettFieldSearch";

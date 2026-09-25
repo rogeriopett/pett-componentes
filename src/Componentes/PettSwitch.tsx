@@ -22,7 +22,7 @@ export interface PettSwitchProps {
     value?: any;
 }
 
-export const PettSwitch: React.FC<PettSwitchProps> = React.memo((props) => {
+export const PettSwitch = React.memo(React.forwardRef<HTMLInputElement, PettSwitchProps>((props, ref) => {
     const {
         autoFocus,
         checked,
@@ -81,6 +81,7 @@ export const PettSwitch: React.FC<PettSwitchProps> = React.memo((props) => {
                     id={name}
                     name={name}
                     type="checkbox"
+                    ref={ref}
                     checked={isChecked}
                     onChange={handleToggle}
                     onBlur={onBlur}
@@ -98,6 +99,6 @@ export const PettSwitch: React.FC<PettSwitchProps> = React.memo((props) => {
             </label>
         </div>
     );
-});
+}));
 
 PettSwitch.displayName = "PettSwitch";

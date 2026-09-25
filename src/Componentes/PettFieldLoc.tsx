@@ -17,7 +17,7 @@ export interface PettFieldLocProps {
     value?: string | number | null;
 }
 
-export const PettFieldLoc: React.FC<PettFieldLocProps> = React.memo((props) => {
+export const PettFieldLoc = React.memo(React.forwardRef<HTMLInputElement, PettFieldLocProps>((props, ref) => {
     const {
         carregando = false,
         disabled = false,
@@ -56,6 +56,7 @@ export const PettFieldLoc: React.FC<PettFieldLocProps> = React.memo((props) => {
                         id={name}
                         name={name}
                         type="text"
+                        ref={ref}
                         inputMode="numeric"
                         value={stringValue}
                         onChange={handleValueChange}
@@ -79,6 +80,6 @@ export const PettFieldLoc: React.FC<PettFieldLocProps> = React.memo((props) => {
             </div>
         </div>
     );
-});
+}));
 
 PettFieldLoc.displayName = "PettFieldLoc";

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useId } from "react";
+import React, { useCallback, useImperativeHandle, useRef, useId } from "react";
 import "./PettFieldOtp.css";
 
 export interface PettFieldOtpProps {
@@ -21,7 +21,12 @@ export interface PettFieldOtpProps {
     value?: string;
 }
 
-export const PettFieldOtp: React.FC<PettFieldOtpProps> = React.memo((props) => {
+export interface PettFieldOtpHandle {
+    /** Foca o primeiro dígito do código. */
+    focus: () => void;
+}
+
+export const PettFieldOtp = React.memo(React.forwardRef<PettFieldOtpHandle, PettFieldOtpProps>((props, ref) => {
     const {
         autoFocus = false,
         disabled = false,
@@ -42,6 +47,12 @@ export const PettFieldOtp: React.FC<PettFieldOtpProps> = React.memo((props) => {
 
     const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
     const containerId = useId();
+
+    useImperativeHandle(ref, () => ({
+        focus: () => {
+            inputRefs.current[0]?.focus();
+        },
+    }), []);
 
     const stringValue = String(value ?? "");
 
@@ -163,6 +174,6 @@ export const PettFieldOtp: React.FC<PettFieldOtpProps> = React.memo((props) => {
             </div>
         </div>
     );
-});
+}));
 
 PettFieldOtp.displayName = "PettFieldOtp";

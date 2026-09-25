@@ -32,7 +32,7 @@ export { PettFieldMoney } from './Componentes/PettFieldMoney';
 export type { PettFieldMoneyProps } from './Componentes/PettFieldMoney';
 
 export { PettFieldOtp } from './Componentes/PettFieldOtp';
-export type { PettFieldOtpProps } from './Componentes/PettFieldOtp';
+export type { PettFieldOtpProps, PettFieldOtpHandle } from './Componentes/PettFieldOtp';
 
 export { PettFieldPass } from './Componentes/PettFieldPass';
 export type { PettFieldPassProps } from './Componentes/PettFieldPass';

@@ -57,7 +57,7 @@ const applyDateMask = (rawValue: string = ""): string => {
     return formatted;
 };
 
-export const PettFieldDate: React.FC<PettFieldDateProps> = React.memo((props) => {
+export const PettFieldDate = React.memo(React.forwardRef<HTMLInputElement, PettFieldDateProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -125,6 +125,7 @@ export const PettFieldDate: React.FC<PettFieldDateProps> = React.memo((props) =>
                     id={name}
                     name={name}
                     type="text"
+                    ref={ref}
                     value={displayValue}
                     onChange={handleTextChange}
                     onBlur={onBlur}
@@ -161,6 +162,6 @@ export const PettFieldDate: React.FC<PettFieldDateProps> = React.memo((props) =>
             </div>
         </div>
     );
-});
+}));
 
 PettFieldDate.displayName = "PettFieldDate";

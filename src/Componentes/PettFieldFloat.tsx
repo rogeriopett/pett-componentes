@@ -51,7 +51,7 @@ const parseDigitsToFloat = (rawValue: string, maxDigits: number = 2): number | n
     return parseFloat(cleanDigits) / Math.pow(10, maxDigits);
 };
 
-export const PettFieldFloat: React.FC<PettFieldFloatProps> = React.memo((props) => {
+export const PettFieldFloat = React.memo(React.forwardRef<HTMLInputElement, PettFieldFloatProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -93,6 +93,7 @@ export const PettFieldFloat: React.FC<PettFieldFloatProps> = React.memo((props) 
                     id={name}
                     name={name}
                     type="text"
+                    ref={ref}
                     inputMode="decimal"
                     value={formattedValue}
                     onChange={handleValueChange}
@@ -108,6 +109,6 @@ export const PettFieldFloat: React.FC<PettFieldFloatProps> = React.memo((props) 
             </div>
         </div>
     );
-});
+}));
 
 PettFieldFloat.displayName = "PettFieldFloat";

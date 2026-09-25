@@ -35,7 +35,7 @@ const getPasswordStrength = (pass: string = ""): number => {
     return score;
 };
 
-export const PettFieldPass: React.FC<PettFieldPassProps> = React.memo((props) => {
+export const PettFieldPass = React.memo(React.forwardRef<HTMLInputElement, PettFieldPassProps>((props, ref) => {
     const {
         autoComplete = "new-password",
         autoFocus,
@@ -117,6 +117,7 @@ export const PettFieldPass: React.FC<PettFieldPassProps> = React.memo((props) =>
                     id={name}
                     name={name}
                     type={showPassword ? "text" : "password"}
+                    ref={ref}
                     value={stringValue}
                     onChange={handleValueChange}
                     onFocus={handleFocus}
@@ -161,6 +162,6 @@ export const PettFieldPass: React.FC<PettFieldPassProps> = React.memo((props) =>
             </div>
         </div>
     );
-});
+}));
 
 PettFieldPass.displayName = "PettFieldPass";

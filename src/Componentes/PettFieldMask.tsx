@@ -68,7 +68,7 @@ const isSlotChar = (maskPattern: string, index: number): boolean => {
     return c === "9" || c === "a" || c === "A" || c === "*";
 };
 
-export const PettFieldMask: React.FC<PettFieldMaskProps> = React.memo((props) => {
+export const PettFieldMask = React.memo(React.forwardRef<HTMLInputElement, PettFieldMaskProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -126,7 +126,11 @@ export const PettFieldMask: React.FC<PettFieldMaskProps> = React.memo((props) =>
         <div className={`pett-field-container ${size}`.trim()}>
             <div className="pett-float-label">
                 <input
-                    ref={inputRef}
+                    ref={(el) => {
+                        inputRef.current = el;
+                        if (typeof ref === "function") ref(el);
+                        else if (ref) ref.current = el;
+                    }}
                     id={name}
                     name={name}
                     type="text"
@@ -144,6 +148,6 @@ export const PettFieldMask: React.FC<PettFieldMaskProps> = React.memo((props) =>
             </div>
         </div>
     );
-});
+}));
 
 PettFieldMask.displayName = "PettFieldMask";

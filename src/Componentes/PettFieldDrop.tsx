@@ -22,7 +22,7 @@ export interface PettFieldDropProps {
     value?: string | number;
 }
 
-export const PettFieldDrop: React.FC<PettFieldDropProps> = React.memo((props) => {
+export const PettFieldDrop = React.memo(React.forwardRef<HTMLSelectElement, PettFieldDropProps>((props, ref) => {
     const {
         disabled = false,
         label,
@@ -64,6 +64,7 @@ export const PettFieldDrop: React.FC<PettFieldDropProps> = React.memo((props) =>
                 <select
                     id={name}
                     name={name}
+                    ref={ref}
                     value={value ?? ""}
                     onChange={handleValueChange}
                     onBlur={onBlur}
@@ -86,6 +87,6 @@ export const PettFieldDrop: React.FC<PettFieldDropProps> = React.memo((props) =>
             </div>
         </div>
     );
-});
+}));
 
 PettFieldDrop.displayName = "PettFieldDrop";

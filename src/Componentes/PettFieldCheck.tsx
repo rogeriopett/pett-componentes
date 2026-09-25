@@ -19,7 +19,7 @@ export interface PettFieldCheckProps {
     value?: boolean;
 }
 
-export const PettFieldCheck: React.FC<PettFieldCheckProps> = React.memo((props) => {
+export const PettFieldCheck = React.memo(React.forwardRef<HTMLInputElement, PettFieldCheckProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -69,6 +69,7 @@ export const PettFieldCheck: React.FC<PettFieldCheckProps> = React.memo((props) 
                     id={name}
                     name={name}
                     type="checkbox"
+                    ref={ref}
                     checked={isChecked}
                     onChange={handleValueChange}
                     onBlur={onBlur}
@@ -97,6 +98,6 @@ export const PettFieldCheck: React.FC<PettFieldCheckProps> = React.memo((props) 
             </label>
         </div>
     );
-});
+}));
 
 PettFieldCheck.displayName = "PettFieldCheck";

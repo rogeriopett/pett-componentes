@@ -118,7 +118,7 @@ const hsvToHex = (h: number, s: number, v: number): string => {
     return `#${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
 };
 
-export const PettFieldColor: React.FC<PettFieldColorProps> = React.memo((props) => {
+export const PettFieldColor = React.memo(React.forwardRef<HTMLInputElement, PettFieldColorProps>((props, ref) => {
     const {
         autoFocus,
         disabled = false,
@@ -262,6 +262,7 @@ export const PettFieldColor: React.FC<PettFieldColorProps> = React.memo((props) 
                         id={name}
                         name={name}
                         type="text"
+                        ref={ref}
                         value={value}
                         onChange={handleTextChange}
                         onBlur={onBlur}
@@ -326,6 +327,6 @@ export const PettFieldColor: React.FC<PettFieldColorProps> = React.memo((props) 
             </div>
         </div>
     );
-});
+}));
 
 PettFieldColor.displayName = "PettFieldColor";

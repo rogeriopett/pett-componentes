@@ -1321,7 +1321,7 @@ var U = (e) => {
 	return /* @__PURE__ */ u("div", {
 		className: `pett-field-container ${_}`.trim(),
 		children: /* @__PURE__ */ d("div", {
-			className: "pett-float-label",
+			className: `pett-float-label ${_}`.trim(),
 			children: [/* @__PURE__ */ u("input", {
 				id: l,
 				name: l,

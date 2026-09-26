@@ -99,7 +99,7 @@ export const PettFieldText = React.memo(React.forwardRef<HTMLInputElement, PettF
 
     return (
         <div className={`pett-field-container ${size}`.trim()}>
-            <div className={`pett-float-label ${size}`.trim()}>
+            <div className="pett-float-label">
                 <input
                     id={name}
                     name={name}
